@@ -8,11 +8,11 @@ from pymongo import MongoClient
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-mongodb_url = os.environ.get("mongodb+srv://Hasyim:learningx@cluster0.oa5m4py.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-db_name = os.environ.get("cluster0")
+MONGODB_URL = os.environ.get("MONGODB_URL")
+DB_NAME = os.environ.get("DB_NAME")
 
-client = MongoClient(mongodb_url)
-db = client[db_name]
+client = MongoClient(MONGODB_URL)
+db = client[DB_NAME]
 
 app = Flask(__name__)
 
